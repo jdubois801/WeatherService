@@ -1,17 +1,10 @@
 package com.abc.model;
 
-import com.couchbase.client.java.repository.annotation.Field;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.couchbase.core.mapping.Document;
+public class AirportCode {
 
-@Document(expiry = 0)
-public class Station {
-
-    @Id
     private String id;
-
-    @Field
     private String name;
+    private String state;
 
     public String getId() {
         return id;
@@ -27,5 +20,13 @@ public class Station {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }

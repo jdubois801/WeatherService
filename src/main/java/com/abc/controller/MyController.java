@@ -19,12 +19,16 @@ public class MyController {
     @GET
     @Path("/world")
     public String endpoint() {
+
         return "hello world";
     }
 
     @GET
     @Path("/current")
     public Observation endpoint(@QueryParam("station_id") String stationId) {
+
+        System.err.println("station_id = " + stationId);
+
         return service.getCurrent(stationId);
     }
 
