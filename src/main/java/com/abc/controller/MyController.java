@@ -3,13 +3,13 @@ package com.abc.controller;
 import com.abc.model.Observation;
 import com.abc.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 
-@Component
+@RestController
 @Path("/hello")
 public class MyController {
 

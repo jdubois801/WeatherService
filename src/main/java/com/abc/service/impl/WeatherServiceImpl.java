@@ -29,10 +29,11 @@ public class WeatherServiceImpl implements WeatherService {
 
         validateAirportCode(stationId);
 
-        for (Station sta :  stationRepo.findAll()) {
-            System.err.println("station = " + sta);
-            System.err.println("station.id = " + sta.getId());
+        for (Station sta :  stationRepo.findByState("OK")) {
+            System.err.println("station.id = " + sta.getCode());
             System.err.println("station.name = " + sta.getName());
+            System.err.println("station.city = " + sta.getCity());
+            System.err.println("station.state = " + sta.getState());
         }
 
         return result;
