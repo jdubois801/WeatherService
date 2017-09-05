@@ -23,10 +23,14 @@ public class StationController {
     @Produces("application/json")
     public List<Station> listAll(
             @QueryParam("state") String state,
+            @QueryParam("rest") String rest,
             @QueryParam("city") String city) {
 
         if (state != null && !state.isEmpty()) {
             return service.findByState(state);
+        }
+        else if (rest != null && !rest.isEmpty()) {
+            return service.findByRest(rest);
         }
         else if (city != null && !city.isEmpty()) {
             return service.findByCity(city);
